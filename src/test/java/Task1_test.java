@@ -1,6 +1,6 @@
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import ru.y_lab.homework.task_1.Task1;
+import ru.y_lab.homework_1.task_1.Task1;
 
 import static org.junit.Assert.assertEquals;
 

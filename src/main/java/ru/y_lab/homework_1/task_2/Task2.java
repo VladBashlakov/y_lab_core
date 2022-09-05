@@ -1,4 +1,4 @@
-package ru.y_lab.homework.task_2;
+package ru.y_lab.homework_1.task_2;
 
 import java.util.Arrays;
 

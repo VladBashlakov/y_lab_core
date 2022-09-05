@@ -1,4 +1,4 @@
-package ru.y_lab.homework.task_1;
+package ru.y_lab.homework_1.task_1;
 
 import java.util.Scanner;
 
