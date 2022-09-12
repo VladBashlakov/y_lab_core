@@ -28,37 +28,29 @@ public class Task_1 {
 
     public static void getFilteredList(Person[] arr) {
 
-        HashMap<Integer, String> people = new HashMap<>();
+        if (arr != null) {
 
-        for (Person person : arr) {
-            people.put(person.getId(), person.getName());
-        }
+            List<Person> people = Arrays.stream(RAW_DATA)
+                    .filter(p -> Objects.nonNull(p.name))
+                    .distinct()
+                    .sorted(Comparator.comparing(Person::getName))
+                    .toList();
 
-        List<String> peopleStr = new ArrayList<>();
+            String name = "text";
+            int id = 1;
 
-        for (Map.Entry<Integer, String> entry : people.entrySet()) {
-            peopleStr.add(entry.getValue() + " (" + entry.getKey() + ")");
-        }
-
-        Collections.sort(peopleStr);
-
-        int index;
-        String tempStr;
-        String nextStr = "test";
-        int id = 0;
-
-        for (String s : peopleStr) {
-            index = s.indexOf(" ");
-            tempStr = s.substring(0, index).trim();
-
-            if (!s.startsWith(nextStr)) {
-                nextStr = tempStr;
-                id = 1;
-                System.out.println(nextStr + ":");
+            for (Person person : people) {
+                if (!person.getName().equals(name)) {
+                    name = person.getName();
+                    System.out.println(person.getName() + ":");
+                    id = 1;
+                } else {
+                    id++;
+                }
+                System.out.println(id + " - " + person);
             }
-
-            System.out.println(id + " - " + s);
-            id++;
+        } else {
+            System.out.println("Передан пустой массив");
         }
     }
 
