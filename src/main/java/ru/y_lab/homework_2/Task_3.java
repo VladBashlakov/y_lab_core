@@ -31,9 +31,17 @@ public class Task_3 {
 
     public static void fuzzySearch(String firstStr, String secondStr) {
 
-        char[] firstStrArr = firstStr.toCharArray();
-        char[] secondStrArr = secondStr.toCharArray();
-        char[] findText = new char[firstStr.length()];
+        char[] firstStrArr = new char[0];
+        char[] secondStrArr = new char[0];
+        char[] findText = new char[0];
+
+        if (firstStr != null && secondStr != null) {
+            firstStrArr = firstStr.toCharArray();
+            secondStrArr = secondStr.toCharArray();
+            findText = new char[firstStr.length()];
+        } else {
+            System.out.println("Проверьте ввод");
+        }
 
         int index = 0;
 

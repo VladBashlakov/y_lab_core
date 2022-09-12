@@ -11,16 +11,25 @@ public class Task_2 {
     public static void main(String[] args) {
 
         int[] arr = {3, 4, 2, 7};
+        findPairWithSumTen(arr);
 
-        for (int i = 0; i < arr.length; i++) {
-            for (int i1 = i + 1; i1 < arr.length; i1++) {
-                if (arr[i1] + arr[i] == 10) {
-                    System.out.println("[" + arr[i] + ", " + arr[i1] + "]");
-                    i = arr.length - 1;
-                }
-            }
-        }
+
     }
 
+    public static void findPairWithSumTen(int[] arr) {
 
-}
+        if (arr != null) {
+            for (int i = 0; i < arr.length; i++) {
+                for (int i1 = i + 1; i1 < arr.length; i1++) {
+                    if (arr[i1] + arr[i] == 10) {
+                        System.out.println("[" + arr[i] + ", " + arr[i1] + "]");
+                        i = arr.length - 1;
+                    }
+                }
+            }
+        } else {
+            System.out.println("Проверьте ввод");
+        }
+    }
+    }
+
